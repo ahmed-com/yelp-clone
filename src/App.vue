@@ -7,7 +7,7 @@
     >
       <v-list>
         <v-list-item
-          v-for="[icon, text] in drawerLinks"
+          v-for="[icon, i18nKey] in drawerLinks"
           :key="icon"
           link
         >
@@ -16,7 +16,7 @@
           </v-list-item-icon>
 
           <v-list-item-content>
-            <v-list-item-title>{{ text }}</v-list-item-title>
+            <v-list-item-title>{{ $t(`${i18nKey}`) }}</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
       </v-list>
@@ -33,19 +33,19 @@
         <v-col cols="1"></v-col>
         <v-col cols="6">
           <a
-          v-for="link in headerLinks"
+          v-for="i18nKey in headerLinks"
           class="header-link"
-          :key="link"
+          :key="i18nKey"
           href="#"
           text
         >
-          {{ link }}
+          {{ $t(`${i18nKey}`) }}
         </a>
         </v-col>
         <v-spacer></v-spacer>
         <v-col cols="3">
-          <a href="#" class="header-link">Log In</a>
-          <a href="#" class="header-btn">Sign Up</a>
+          <a href="#" class="header-link">{{$t("headerLinks.login")}}</a>
+          <a href="#" class="header-btn">{{$t("headerLinks.signUp")}}</a>
         </v-col>
         
       </v-row>
@@ -115,7 +115,7 @@
                 :href="service.link"
                 text
               >
-                {{ service.label }}
+                {{ $t(`${service.i18nKey}`) }}
               </a>
             </span>
           </v-col>
@@ -131,7 +131,7 @@
               class="mt-2"
               cols="12"
             >
-              <strong>Category {{ n }}</strong>
+              <strong>{{$t("mainContent.category")}} {{ n }}</strong>
             </v-col>
 
             <v-col
@@ -195,17 +195,16 @@ export default {
       drawer: false,
 
       drawerLinks :[
-        ['mdi-account-plus', 'Sign Up'],
-        ['mdi-login', 'Log In'],
-        ['mdi-information', 'About Us']
+        ['mdi-account-plus', "$drawer.signUp"],
+        ['mdi-login', "drawer.login"],
+        ['mdi-information', "drawer.aboutUs"]
       ],
 
       headerLinks: [
-        'Write a Review',
-        'Events',
-        // this.$vuetify.t("hello"),
-        'Talk',
-        'Yelp for Business',
+        "headerLinks.writeReview",
+        'headerLinks.events',
+        "headerLinks.talk",
+        "headerLinks.yelpForBusiness",
       ],
       serviceSuggestions: [
         "restaurants",
@@ -214,10 +213,10 @@ export default {
       ],
 
       exampleServices: [
-        { label: "Cloth", icon: "mdi-hanger", link: "#"},
-        { label: "Fabric", icon: "mdi-tshirt-crew", link: "#"},
-        { label: "Books", icon: "mdi-bookshelf", link: "#"},
-        { label: "Grocery", icon: "mdi-cart", link: "#"}
+        { i18nKey: 'exampleServices.cloth' , icon: "mdi-hanger", link: "#"},
+        { i18nKey: "exampleServices.fabric", icon: "mdi-tshirt-crew", link: "#"},
+        { i18nKey: "exampleServices.books", icon: "mdi-bookshelf", link: "#"},
+        { i18nKey: "exampleServices.grocery", icon: "mdi-cart", link: "#"}
       ],
 
       langs: [
@@ -248,8 +247,11 @@ export default {
       let rtl = false;
       if(lang === 'ar') rtl = true;
 
+      this.$i18n.locale = lang;
+      this.$root.$i18n.locale = lang;
       this.$vuetify.lang.current = lang;
-      this.$vuetify.rtl = rtl;
+      this.$forceUpdate()
+      this.$vuetify.rtl = rtl
     }
   },
 
