@@ -67,8 +67,8 @@
       </v-row>
 
       <v-row>
-        <v-col cols="12">
-          <!-- <YelpSearch class="search-input"
+        <v-col cols="6">
+          <!-- <YelpSearchMobile class="search-input"
             servicePlaceholder="service"
             serviceTypeahead="Restaurant"
             :serviceSuggestions="serviceSuggestions"
@@ -153,12 +153,26 @@
   >
   <v-container>
     <v-row align="center">
-      <v-col >
-          <v-card-text >
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ab vero expedita, minima dolore, dolorum nesciunt, asperiores consectetur eos blanditiis mollitia excepturi placeat accusantium odit! Blanditiis ducimus omnis tenetur rerum exercitationem eaque nisi est adipisci, molestiae aliquid officia modi incidunt ut, aperiam accusamus voluptates nostrum alias quae dolor accusantium perspiciatis voluptas!
-          </v-card-text>
-        </v-col>
-        <v-col md="2">
+      <v-col cols="12" md="2">
+        <h1>Brand</h1>
+        <v-card-text >
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+        </v-card-text>
+      </v-col>
+      <v-spacer></v-spacer>
+      <v-col cols="12" md="2">
+        <v-card-title>Make money at Gomla</v-card-title>
+        <v-card-text >
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+        </v-card-text>
+      </v-col>
+      <v-col cols="12" md="2">
+        <v-card-title>About Gomla</v-card-title>
+        <v-card-text >
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi temporibus recusandae fuga suscipit quam iusto velit cum quae ratione perspiciatis!
+        </v-card-text>
+      </v-col>
+        <v-col cols="6" md="2">
           <v-select
            :items="langs" 
            label="Language"
@@ -186,6 +200,7 @@
 
 <script>
 import YelpSearch from './components/YelpSearch.vue'
+// import YelpSearchMobile from './components/YelpSearchMobile.vue'
 
 export default {
   name: "App",
@@ -195,7 +210,7 @@ export default {
       drawer: false,
 
       drawerLinks :[
-        ['mdi-account-plus', "$drawer.signUp"],
+        ['mdi-account-plus', "drawer.signUp"],
         ['mdi-login', "drawer.login"],
         ['mdi-information', "drawer.aboutUs"]
       ],
@@ -256,7 +271,8 @@ export default {
   },
 
   components: {
-    YelpSearch
+    YelpSearch,
+    // YelpSearchMobile
   }
 
 };
