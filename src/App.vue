@@ -151,8 +151,8 @@
     padless
     class="grey  lighten-4 text-center"
   >
-  <v-container>
-    <v-row align="center">
+  <v-container >
+    <v-row class="footer-container" align="baseline">
       <v-col cols="12" md="2">
         <h1>Brand</h1>
         <v-card-text >
@@ -161,18 +161,18 @@
       </v-col>
       <v-spacer></v-spacer>
       <v-col cols="12" md="2">
-        <v-card-title>Make money at Gomla</v-card-title>
+        <v-card-title class="footer-title">Make money at Gomla</v-card-title>
         <v-card-text >
           Lorem ipsum dolor sit amet consectetur adipisicing elit. 
         </v-card-text>
       </v-col>
       <v-col cols="12" md="2">
-        <v-card-title>About Gomla</v-card-title>
+        <v-card-title class="footer-title">About Gomla</v-card-title>
         <v-card-text >
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi temporibus recusandae fuga suscipit quam iusto velit cum quae ratione perspiciatis!
         </v-card-text>
       </v-col>
-        <v-col cols="6" md="2">
+        <v-col cols="6" md="2" align-self="center">
           <v-select
            :items="langs" 
            label="Language"
@@ -188,7 +188,7 @@
       <v-row>
         <v-col cols="12">
           <v-card-text >
-            {{ new Date().getFullYear() }} — <strong>Yelp</strong>
+            {{ new Date().getFullYear() }} — <strong>Gomla</strong>
           </v-card-text>
 
         </v-col>
@@ -338,6 +338,14 @@ export default {
 
 .example-service{
   padding: 0 12px;
+}
+
+.footer-container{
+  justify-content: center;
+}
+
+.footer-title{
+  word-break: normal;
 }
 
 /* .select-lang{
