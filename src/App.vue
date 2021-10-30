@@ -123,26 +123,26 @@
       </v-container>
     </v-parallax>
     <v-main >
-      <v-container>
-        <v-row>
-          <template v-for="n in 4">
+      <v-container >
+        <v-row class="justify-center mb-5"> 
             <v-col
-              :key="n"
-              class="mt-2"
-              cols="12"
+              v-for="service in exampleServices"
+              :key="service.label"
             >
-              <strong>{{$t("mainContent.category")}} {{ n }}</strong>
-            </v-col>
+              <v-card
+                class="mx-auto"
+                max-width="250px"
+              >
+                <v-img
+                  src="https://cdn.vuetifyjs.com/images/cards/cooking.png"
+                  height="200px"
+                ></v-img>
 
-            <v-col
-              v-for="j in 6"
-              :key="`${n}${j}`"
-              cols="6"
-              md="2"
-            >
-              <v-sheet height="150" class="grey lighten-2"></v-sheet>
+                <v-card-title class="justify-center">
+                  {{$t(`${service.i18nKey}`)}}
+                </v-card-title>
+              </v-card>
             </v-col>
-          </template>
         </v-row>
       </v-container>
     </v-main>
