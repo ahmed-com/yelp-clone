@@ -216,10 +216,8 @@ export default {
       ],
 
       headerLinks: [
-        "headerLinks.writeReview",
-        'headerLinks.events',
-        "headerLinks.talk",
-        "headerLinks.yelpForBusiness",
+        "headerLinks.home",
+        'headerLinks.aboutUs'
       ],
       serviceSuggestions: [
         "restaurants",

@@ -8,10 +8,8 @@ const messages = {
 		headerLinks: {
 			signUp: 'Sign Up',
 			login: 'Log In',
-			yelpForBusiness: 'Yelp For Business',
-			talk: 'Talk',
-			events: 'Events',
-			writeReview: 'Write A Review',
+			home: 'Home',
+			aboutUs: 'About Us'
 		},
 
 		drawer: {
@@ -36,10 +34,8 @@ const messages = {
 		headerLinks: {
 			signUp: 'انشاء حساب',
 			login: 'تسجيل دخول',
-			yelpForBusiness: 'يلب للأعمال',
-			talk: 'اتكلم',
-			events: 'أحدات',
-			writeReview: 'اكتب رأيك',
+			home: 'الرئيسيه',
+			aboutUs: 'اقرأ عنا'
 		},
 
 		drawer: {
